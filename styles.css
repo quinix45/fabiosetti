@@ -14,7 +14,7 @@ html {
 body {
 	padding: 0;
 	margin: 0;
-	background-image: url("Images/paper-background.jpg")
+	/* background-image: url("Images/paper-background.jpg") */
 }
 
 header {
@@ -34,10 +34,29 @@ header {
 
 	border-image: url('https: //www.w3schools.com/css/border.png') 80 80 80 repeat;
 
-	background-color: rgba(255, 255, 255);
+	/* background-color: rgba(255, 255, 255); */
 	
 }
 
+header p {
+	margin-top: 4rem;
+}
+
+main {
+	padding: 1.5rem;
+	padding-top: 0;
+	margin: auto;
+	max-width: 80rem;
+}
+
+.socials-rack {
+	display: flex;
+	gap: 1rem;
+}
+
+.socials-rack a {
+	font-size: 2rem;
+}
 
 .inline-link {
 	text-decoration: none;  /* Remove underline */
@@ -69,17 +88,6 @@ header div div b {
 	header h1 {
 		font-size: 3rem;
 	}
-}
-
-header p {
-	margin-top: 4rem;
-}
-
-main {
-	padding: 1.5rem;
-	padding-top: 0;
-	margin: auto;
-	max-width: 60rem;
 }
 
 a {
