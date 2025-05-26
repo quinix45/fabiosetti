@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Graduate Regression Course Materials in R">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css" integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous">
+	<link rel="stylesheet" href="styles.css">
+	<script src="script.js" href="script.js"></script>
+
+	<script src="Components/LabCard.js"></script>
+
+	<title> PSYC 7804 Lab</title>
+</head>
+
+<body>
+	<template id="lab-card-template">
+		<link rel="stylesheet" href="styles.css">
+
+		<div id="lab-number-box" class="lab-number">
+			0
+		</div>
+		<div>
+			<h1 part="h1">
+				<slot name="title">Lab Title</slot>
+			</h1>
+			<p>
+				<slot name="description">Lab Description</slot>
+			</p>
+		</div>
+		<div class="button-box">
+			<button id="slides-button" onclick="window.open('./Slides%20Files/Lab%201.html', '_blank');"
+				class="fancy-button">Slides</button>
+			<a id="code-link" href="./Slides%20Files/Lab%20Code/Lab%201%20code.Rmd" download="Lab_1_code.Rmd" target="_blank"
+				class="fancy-button">Code</a>
+			<a id="activity-link" href="./Lab Activities/Lab 1 Activity.Rmd" download="Lab_1_activity.Rmd" target="_blank"
+				class="fancy-button">Activity</a>
+		</div>
+	</template>
+
+	<div class="icon-box">
+		<a class="icon-link" href="https://github.com/quinix45/PSYC-7804-Regression-Lab-Slides" target="blank_"> <i class="fa fa-github"></i> </a>
+		<a class="icon-link" href="https://www.linkedin.com/in/fabio-setti-0a0a85236/" target="blank_"> <i class="fa fa-linkedin"></i> </a>
+		<a class="icon-link" href="mailto:fsetti@fordham.edu" target="blank_"> <i class="fa fa-envelope"></i> </a>
+		<!-- <a class="icon-link" href="https://orcid.org/0000-0001-8516-6939 " target="blank_"> <i class="fa fa-orcid"></i> </a> -->
+	</div>
+
+	<header>
+		<h1>PSYC 7804 <br />Regression With Lab</h1>
+
+		<div class="description-box">
+			<div>
+				<b>Slides</b>
+				<br />
+				Click to access Lab presentations. To navigate slides, use left/right arrow keys (on laptop) or swipe left/right (on tablet). The slides are created with the
+				<a href="https://quarto.org/docs/presentations/" target="_blank" class="inline-link">quarto</a>
+				extension of
+				<a href="https://posit.co/download/rstudio-desktop/" target="_blank" class="inline-link">RStudio</a> and use the <a href="https://revealjs.com" target="_blank" class="inline-link">revealjs</a>
+				framework.
+			</div>
+			<div>
+				<b>Code</b>
+				<br />
+				Click to download raw R code that is used in the Lab slides. The code is included in a .Rmd file that is divided according to the title of each Lab slide.
+			</div>
+			<div>
+				<b>Activity</b>
+				</br>
+				Click to download Lab activity with practice questions and solutions as a .Rmd file. A Lab activity presents questions of varying difficulty related to the respective Lab.
+			</div>
+		  </div>
+	</header>
+	
+	<main> 
+		<div class="lab-card-grid">
+
+			<lab-card lab-number="1">
+				<span slot="title">Descriptive Statistics and Plots</span>
+				<span slot="description"> This Lab goes over how to import data into R, compute some descriptive statistics, and the logic and process behind creating plots with <a href="https://ggplot2.tidyverse.org" target="_blank" class="inline-link">ggplot</a>. An in depth-explanation of QQplots is also included in the last slides. </span>
+			</lab-card>
+
+			<lab-card lab-number="2">
+				<span slot="title">One-Predictor Regression</span>
+				<span slot="description"> This Lab discusses how to interpret one-predictor regression output, how to use regression to make predictions, what residuals are, and how to run a standardized regression in R. The appendix touches upon the meaning of a regression model and the root of regression assumptions. </span>
+			</lab-card>
+
+			<lab-card lab-number="3">
+				<span slot="title">Significance Tests and Reporting Results</span>
+				<span slot="description"> This Lab goes over the significance-testing of regression coefficients, as well as the meaning of <i>p</i>-values, and reporting regression results. This Lab also includes a custom function to create APA style regression tables. </span>
+			</lab-card>
+
+			<lab-card lab-number="4">
+				<span slot="title">Introduction To Two-Predictor Regression</span>
+				<span slot="description"> This Lab introduces multiple regression, contrasts one-predictor and multiple regression, includes interactive 3D visualization of regression planes, and goes over <i>R</i><sup>2</sup> and the meaning of the term <i>variance explained</i>. </span>
+			</lab-card>
+
+			<lab-card lab-number="5">
+				<span slot="title">Added Variable Plots and Bootstrapping</span>
+				<span slot="description"> This lab introduces added variable plots as a way of visualizing partial regression coefficients. The idea of bootstrapping and its applications in the context of linear regression are also discussed. For learning purposes, this Lab also includes raw code that details the steps to create added variable plots, as well as bootstrapped confidence intervals for <i>R</i><sup>2</sup>. </span>
+			</lab-card>
+
+			<lab-card lab-number="6">
+				<span slot="title">Semi-partial, Partial-correlations, and Model Comparison</span>
+				<span slot="description">This Lab introduces semi-partials and partial-correlations, and contrasts them with correlation. This lab also discusses model comparison with hierarchical regression and information criteria methods such as AIC and BIC. </span>
+			</lab-card>
+
+			<lab-card lab-number="7">
+				<span slot="title"> Multicollinearity, Dominance Analysis, and Power </span>
+				<span slot="description">This Lab touches upon multicollinearity in linear regression and its consequences. Dominance analysis is also discussed as a method to evaluate relative importance of predictors in a regression. Power in regression and criticisms of practices related to power are discussed. </span>
+			</lab-card>
+			
+			<lab-card lab-number="8">
+				<span slot="title">Quadratic regression and non-linear alternatives</span>
+				<span slot="description">This Lab goes over quadratic regression and detailed interpretations of its regression coefficients. This Lab also includes alternative methods such as piece-wise regression and splines. </span>
+			</lab-card>
+			
+			<lab-card lab-number="9">
+				<span slot="title">Interactions Between Continuous Variables</span>
+				<span slot="description"> This Lab goes over interaction effects (AKA moderation) between continuous variables. This Lab includes interpretation of interaction effects, 3D interactive representations, simple slopes interpretations and visualizations, and Johnson-Neyman plots.  </span>
+			</lab-card>
+			
+			<lab-card lab-number="10">
+				<span slot="title">Categorical Predictors</span>
+				<span slot="description"> This Lab introduces the use of categorical predictors in linear regression. Different coding schemes for categorical predictors such as dummy coding and contrast coding are described. The equivalence of regression with categorical predictors and <i>t</i>-tests and ANOVAs is also discussed. </span>
+			</lab-card>
+			
+			<lab-card lab-number="11">
+				<span slot="title"> Interactions with Categorical Predictors </span>
+				<span slot="description"> This lab introduces Interactions involving categorical predicotrs. Methods for probing interactions between categorical and continuous predictors are discussed.  </span>
+			</lab-card>
+
+			<lab-card lab-number="12">
+				<span slot="title">Mediation Analysis</span>
+				<span slot="description"> This lab introduces mediation analysis with path models using <a href="https://lavaan.ugent.be" target="_blank" class="inline-link">lavaan</a>. Aside from simple mediation, examples of parallel mediation and moderated mediation are also shown.  </span>
+			</lab-card>
+
+			<lab-card lab-number="13">
+				<span slot="title">Missing Data</span>
+				<span slot="description">This lab presents a short introduction to issues related to missing data. Missing data mechanisms, as well as consequences of missing data mishandling are discussed (e.g., bias of results). Full information maximum likelihood (FIML) is introduced as a way of handling missing data. More advanced missing data methods are briefly mentioned. </span>
+			</lab-card>
+
+			<lab-card lab-number="14">
+				<span slot="title">Regression Diagnostics</span>
+				<span slot="description"> This lab discusses leverage, distance, and influence, three properties of individual data points that may impact regression results and conclusions. The regression diagnostics discussed are: hat values, studentized Residuals, DFFITS, Cook’s <i>D</i>, COVRATIO, and DFBETAS. Influence of outliers on regression results is also discussed. </span>
+			</lab-card>
+
+		</div>
+	</main>
+</body>
+
+</html>
